@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: node
+  namespace: node
   labels:
     name: node
 spec:
@@ -16,7 +17,8 @@ spec:
     spec:
       containers:
       - name: node
-        image: gcr.io/<PROJECT_ID>/node-kubernetes:v0.0.1 # update
+        imagePullPolicy: Never
+        image: node-kubernetes-web:v1
         env:
         - name: NODE_ENV
           value: "development"

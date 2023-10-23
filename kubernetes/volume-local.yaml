@@ -7,10 +7,9 @@ metadata:
     name: postgres-pv
 spec:
   capacity:
-    storage: 50Gi
+    storage: 10Gi
   storageClassName: standard
   accessModes:
-    - ReadWriteOnce
-  gcePersistentDisk:
-    pdName: pg-data-disk
-    fsType: ext4
+    - "ReadWriteOnce"
+  hostPath:
+    path: /data/postgresdata
