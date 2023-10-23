@@ -11,5 +11,5 @@ spec:
   storageClassName: standard
   accessModes:
     - "ReadWriteOnce"
-  hostPath:
-    path: /data/postgresdata
+  hostPath: # it's minikube host not yours. Use minicube mount host_path:minicube_path to mount you host dir in minikube
+    path: /data/postgresdata2
